@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Add Post</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="addPostForm">
+    <div class="flex-container">
+      <mat-form-field class="example-full-width" [appearance]="'outline'">
+        <mat-label>Title</mat-label>
+        <input matInput value="" formControlName="title" placeholder="Title">
+        <mat-error *ngIf="title?.hasError('required')">Title is required</mat-error>
+        <mat-error *ngIf="title?.hasError('minlength')">Title must be at least 3 characters long</mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" [appearance]="'outline'">
+        <mat-label>Body</mat-label>
+        <input matInput formControlName="body" value="Body">
+        <mat-error *ngIf="body?.hasError('required')">Body is required</mat-error>
+        <mat-error *ngIf="body?.hasError('minlength')">Body must be at least 3 characters long</mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button color="accent" mat-dialog-close>Cancel</button>
+  <button mat-button color="primary" (click)="onSubmit()" cdkFocusInitial>Submit</button>
+</mat-dialog-actions>

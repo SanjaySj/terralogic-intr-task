@@ -4,7 +4,7 @@
       <div class="row">
         <h2>List of Posts</h2>
       </div>
-      <div>
+      <div class="row">
         <mat-form-field class="example-form-field" [appearance]="'outline'">
           <mat-label>Search posts</mat-label>
           <input matInput type="text" [formControl]="searchTerm">
@@ -14,6 +14,7 @@
           </button>
           }
         </mat-form-field>
+        <button class="custom-btn" color="primary" mat-raised-button (click)="addPost()">Add New Post</button>
       </div>
     </div>
     <div class="list-content">

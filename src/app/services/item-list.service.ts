@@ -14,4 +14,8 @@ export class ItemListService {
   getListOfUsers(): Observable<Item[]> {
     return this.httpClient.request<Item[]>('GET', endpoints.posts, {});
   }
+
+  addPostRequest(body: Partial<Item>): Observable<Item> {
+    return this.httpClient.request<Item>('POST', endpoints.posts, { body });
+  }
 }
